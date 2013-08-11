@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -12,11 +13,11 @@ group :development, :test do
 	gem 'pry-nav'
 end
 
-
 group :production do
 	gem 'pg'
 end
 
+gem 'capistrano'
 
 
 # To use ActiveModel has_secure_password
