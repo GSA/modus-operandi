@@ -17,7 +17,7 @@ require 'capistrano/ext/multistage'
 set :application, "modus-operandi"
 set :repository, "git@github.com:GSA-OCSIT/modus-operandi.git"
 set :scm, :git
-set :use_sudo, false
+set :use_sudo, true
 set :user, 'ubuntu'
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
