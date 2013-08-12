@@ -8,6 +8,9 @@ ModusOperandi::Application.routes.draw do
           get 'full_map'
         end
         resources :sections do
+          member do
+            get 'full_map'
+          end
           resources :tasks
         end
       end

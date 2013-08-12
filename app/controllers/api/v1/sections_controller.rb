@@ -7,10 +7,15 @@ class Api::V1::SectionsController < ApplicationController
 	end
 
 	def show
-		@sections = Section.find_all_by_id(params[:id])
-		render :json => @sections.to_json(
+		@section = Section.find(params[:id])
+		render :json => @section.to_json(
 			{
 				:include => [ :tasks, :tags, :links ]
 			})
+	end
+
+	def full_map
+		@section = Section.find_by_id(params[:id])
+		render :json => @section.full_map
 	end
 end

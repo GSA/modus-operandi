@@ -10,8 +10,17 @@ class Registration < ActiveRecord::Base
   end
 
   def full_map
-  	{
-  		:self => 'self.to_json'
-  	}
+  	@map ||= generate_map
   end
+
+  def generate_map(elements=[:sections, :tags, :links])
+    @map = self.attributes
+    @map[:sections] = []
+    @map[:sections] = self.sections.collect { |section| section.full_map } if elements.include? :sections
+    # binding.pry
+    @map[:tags] = self.tags if elements.include? :tags
+    @map[:links] = self.links if elements.include? :links
+    @map
+  end
+  
 end
