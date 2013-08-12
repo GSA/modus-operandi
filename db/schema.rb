@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808185027) do
+ActiveRecord::Schema.define(version: 20130812181034) do
 
   create_table "links", force: true do |t|
     t.string   "name"
     t.string   "url"
     t.integer  "linkable_id"
-    t.integer  "linkable_type"
+    t.string   "linkable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20130808185027) do
     t.integer  "registration_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "whats_next"
   end
 
   add_index "sections", ["registration_id"], name: "index_sections_on_registration_id"
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20130808185027) do
     t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "whats_next"
   end
 
   add_index "tasks", ["section_id"], name: "index_tasks_on_section_id"
