@@ -1,1 +1,14 @@
-Registration: 
+# 
+# 	Use this file with process-agnostic model for future process definitions.
+# 
+# EXAMPLE:
+# Registration: SAM (System for Award Management) Registration Process
+# 	description: We help you get the information you need to complete SAM registration with ease and pleasure. 
+#		tags_list: registration
+#		links: http://sam.gov
+#		Section: Registration Overview
+#			description: The first step in the SAM process is to collect the necessary information required from external resources.
+#			tags: external dependency
+#			dependencies: [{ :name => 'Tax Identification Number (TIN)', :link => 'http://irs.gov'}, { :name => 'DUNS Number', :description => 'This is a 9-digit number representing your business in the credit-reporting company Duns &amp; Bradstreet', :link => 'http://dnb.com' } ]
+#		Section: Business information
+#			description: Basic info

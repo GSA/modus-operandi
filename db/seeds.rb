@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-r = Registration.create(:name => 'SAM.gov', :description => 'A valid registration with SAM.gov is required to do business with the federal government, including RFP-EZ.')
+# ******** These seeds were created for the DEMO.. see seeds.yml for future implementations **********
+r = Registration.create(:name => 'SAM (System of Award Management) Registration Process', :description => 'The System for Award Management (SAM) is the Official U.S. Government system that consolidated the capabilities of CCR/FedReg, ORCA, and EPLS. This is your starting point for clearing the requirements of RFP-EZ and various other platforms within the federal government. Often, this process can seem daunting and you might not know where to start. Our walkthrough allows you to collect the necessary information you will need to complete SAM registration ahead of time. Furthermore, business owners can get the help they need at any step along the SAM path.')
 r.links << Link.create(:name => 'Registration Start URL', :url => 'https://www.sam.gov/portal/public/SAM/')
 r.sections << Section.create(:name => 'Registration Overview', :dependencies => 'Requires a user account on SAM.gov from: https://www.sam.gov/portal/public/SAM/')
 r.sections.last.links << Link.create(:name => 'User account registration', :url => 'https://www.sam.gov/portal/public/SAM/')
@@ -40,7 +41,7 @@ r.sections.last.tasks << Task.create(:name => 'Executive Compensation Questions'
 r.sections.last.tasks << Task.create(:name => 'Proceedings Questions')
 r.sections.last.tasks << Task.create(:name => 'Information Opt-Out')
 r.sections << Section.create(:name => 'Assertions')
-r.sections.last.tasks << Task.create(:name => 'Goods and Services (NAICS, PSC)', :dependencies => 'NAICS Code (industry classification)-- SAM will provide a search but users could also pre-locate their code via the Census’ search tool: http://www.census.gov/eos/www/naics/. Product or Service Codes')
+r.sections.last.tasks << Task.create(:name => 'Goods and Services (NAICS, PSC)', :dependencies => 'NAICS Code (industry classification)-- SAM will provide a search but users could also pre-locate their code via the Census search tool: http://www.census.gov/eos/www/naics/. Product or Service Codes')
 r.sections.last.tasks.last.links << Link.create(:name => 'Census Search Tool', :url => 'http://www.census.gov/eos/www/naics/')
 t = r.sections.last.tasks.last
 t.tag_list = 'external dependency'
@@ -59,3 +60,5 @@ r.sections << Section.create(:name => 'Points of Contact')
 r.sections.last.tasks << Task.create(:name => 'POC Details')
 r.sections << Section.create(:name => 'Small Business Certification')
 r.sections.last.tasks << Task.create(:name => 'SBA Profile')
+
+r = Registration.create(:name => 'SBIR (Small Business Innovation Research)', :description => "The Small Business Innovation Research (SBIR) program is a highly competitive program that encourages domestic small businesses to engage in Federal Research/Research and Development (R/R&D) that has the potential for commercialization. Through a competitive awards-based program, SBIR enables small businesses to explore their technological potential and provides the incentive to profit from its commercialization. By including qualified small businesses in the nation's R&D arena, high-tech innovation is stimulated and the United States gains entrepreneurial spirit as it meets its specific research and development needs.")

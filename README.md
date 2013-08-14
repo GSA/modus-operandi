@@ -6,11 +6,10 @@ User-centric process definitions
 > The purpose of Project MyUSA is to reimagine how citizens interact with government through an experience designed around their needs rather than a confusing and fragmented bureaucracy.
 
 ## Todo
- - Setup views with Rabl
- - Fix queries to be performant
+ - Test coverage!
+ - Caching memcached strategy
  - OAuth provider support
- - memcached support
- - add additional workflows
+ - Create multi-level, process-agnostic model
 
 
 ## Contributing
