@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812181034) do
+ActiveRecord::Schema.define(version: 20130814194813) do
 
   create_table "links", force: true do |t|
     t.string   "name"
@@ -21,6 +21,31 @@ ActiveRecord::Schema.define(version: 20130812181034) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "operation_types", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "operations", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "dependencies"
+    t.text     "whats_next"
+    t.string   "url"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.text     "help"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "operation_type"
+    t.integer  "operation_type_id"
+  end
+
+  add_index "operations", ["operation_type"], name: "index_operations_on_operation_type"
 
   create_table "registrations", force: true do |t|
     t.string   "name"

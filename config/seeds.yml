@@ -1,14 +1,59 @@
-# 
-# 	Use this file with process-agnostic model for future process definitions.
-# 
-# EXAMPLE:
-# Registration: SAM (System for Award Management) Registration Process
-# 	description: We help you get the information you need to complete SAM registration with ease and pleasure. 
-#		tags_list: registration
-#		links: http://sam.gov
-#		Section: Registration Overview
-#			description: The first step in the SAM process is to collect the necessary information required from external resources.
-#			tags: external dependency
-#			dependencies: [{ :name => 'Tax Identification Number (TIN)', :link => 'http://irs.gov'}, { :name => 'DUNS Number', :description => 'This is a 9-digit number representing your business in the credit-reporting company Duns &amp; Bradstreet', :link => 'http://dnb.com' } ]
-#		Section: Business information
-#			description: Basic info
+Registrations:
+  "SAM (System of Award Management) Registration Process":
+    description: "The System for Award Management (SAM) is the Official U.S. Government system that consolidated the capabilities of CCR/FedReg, ORCA, and EPLS. This is your starting point for clearing the requirements of RFP-EZ and various other platforms within the federal government. Often, this process can seem daunting and you might not know where to start. Our walkthrough allows you to collect the necessary information you will need to complete SAM registration ahead of time. Furthermore, business owners can get the help they need at any step along the SAM path."
+    link:
+      name: Registration Start URL
+      url: "https://www.sam.gov/portal/public/SAM/"
+    children:
+      "Registration Overview":
+        dependencies: "Requires a user account on SAM.gov from: https://www.sam.gov/portal/public/SAM/"
+        link:
+          name: SAM User Account Registration
+          url: "https://www.sam.gov/portal/public/SAM/"
+        tag_list: external dependency
+      "Purpose of Registration":
+        children:
+          "Determine Purpose":
+          "Core Data":
+            dependencies: "Requires a valid 9-digit DUNS number from http://fedgov.dnb.com/webform/displayHomePage.do"
+            link:
+              name: "Get a DUNS Number"
+              url: "http://fedgov.dnb.com/webform/displayHomePage.do"
+          "Business Information":
+          "IRS Consent":
+            dependencies: "Your company's Tax Identification Number (TIN)"
+            link:
+              name: "Get a Tax Identification Number (TIN)"
+              url: "http://www.irs.gov/Businesses/Small-Businesses-&-Self-Employed/Apply-for-an-Employer-Identification-Number-(EIN)-Online"
+          "CAGE or NCAGE Code":
+            dependencies: "CAGE Code: You need to bring it if you have it, or SAM will automatically assign you one'"
+          "General Information":
+          "Financial Information":
+            dependencies: "EFT: Account Type, Routing Number, Account Number, ACH US Phone, ACH Non-US Phone, ACH Fax, ACH Email"
+          "Executive Compensation Questions":
+          "Proceedings Questions":
+          "Information Opt-Out":
+      "Assertions":
+        children:
+          "Goods and Services (NAICS, PSC)":
+            dependencies: "NAICS Code (industry classification)-- SAM will provide a search but users could also pre-locate their code via the Census search tool: http://www.census.gov/eos/www/naics/. Product or Service Codes"
+            link:
+              name: "Census Search Tool"
+              url: "http://www.census.gov/eos/www/naics/"
+          "Size Metrics":
+          "EDI Information":
+          "Disaster Relief Information":
+      "Representation and Certifications":
+        children:
+          "FAR Response 1 (Federal Acquisition Regulation)":
+          "FAR Response 2":
+          "FAR Response 3":
+          "FAR Response 4":
+          "Architect-Engineer Response":
+          "Defense Response":
+      "Points of Contact":
+        children:
+          "Points of Contact Details":
+      "Small Business Certification":
+        children:
+          "Small Business Association Profile":

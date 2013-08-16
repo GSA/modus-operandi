@@ -17,7 +17,6 @@ class Registration < ActiveRecord::Base
     @map = self.attributes
     @map[:sections] = []
     @map[:sections] = self.sections.collect { |section| section.full_map } if elements.include? :sections
-    # binding.pry
     @map[:tags] = self.tags if elements.include? :tags
     @map[:links] = self.links if elements.include? :links
     @map

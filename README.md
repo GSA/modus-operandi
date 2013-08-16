@@ -6,10 +6,11 @@ User-centric process definitions
 > The purpose of Project MyUSA is to reimagine how citizens interact with government through an experience designed around their needs rather than a confusing and fragmented bureaucracy.
 
 ## Todo
- - Test coverage!
- - Caching memcached strategy
+ - Test coverage
+ - Recursive operation creation
+ - Caching strategy
  - OAuth provider support
- - Create multi-level, process-agnostic model
+ - <s>Create multi-level, process-agnostic model</s>
 
 
 ## Contributing
