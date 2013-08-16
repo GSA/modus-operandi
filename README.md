@@ -10,7 +10,7 @@ User-centric process definitions
  - Recursive operation creation
  - Caching strategy
  - OAuth provider support
- - <s>Create multi-level, process-agnostic model</s>
+ - ~~Create multi-level, process-agnostic model~~
 
 
 ## Contributing
