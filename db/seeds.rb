@@ -57,20 +57,20 @@ y.keys.each do |key|
 	y[key].each do |op|
 		new_op = assemble_op_hash(op)
 		new_opl1 = create_operation(new_op, ot)
-		pp "Created operation: #{new_opl1.name}"
+		puts "Created operation: #{new_opl1.name}"
 
 		if op.second.has_key? 'children' and !op.second['children'].nil?
 			op.second['children'].each do |opl2|
 				new_op = assemble_op_hash(opl2)
 				new_opl2 = create_operation(new_op, ot, new_opl1)
-				pp "Created operation: #{new_opl2.name}"
+				puts "Created operation: #{new_opl2.name}"
 
 				if opl2.second.has_key? 'children' and !opl2.second['children'].nil?
 					opl2.second['children'].each do |opl3|
 
 						new_op = assemble_op_hash(opl3)
 						new_opl3 = create_operation(new_op, ot, new_opl2)
-						pp "Created operation: #{new_opl3.name}"
+						puts "Created operation: #{new_opl3.name}"
 
 					end
 				end
