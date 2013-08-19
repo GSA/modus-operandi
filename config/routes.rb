@@ -18,6 +18,7 @@ ModusOperandi::Application.routes.draw do
 
       resources :operations do
         member do
+          get 'map', to: 'operations#full_map'
           get 'full_map'
         end
       end

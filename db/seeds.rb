@@ -70,7 +70,7 @@ y.keys.each do |key|
 
 						new_op = assemble_op_hash(opl3)
 						new_opl3 = create_operation(new_op, ot, new_opl2)
-						pp "Created operation: #{new_opl3j.name}"
+						pp "Created operation: #{new_opl3.name}"
 
 					end
 				end
