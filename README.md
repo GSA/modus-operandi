@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/GSA-OCSIT/modus-operandi.png?branch=master)](https://travis-ci.org/GSA-OCSIT/modus-operandi)
+
 Modus Operandi
 =========
 
