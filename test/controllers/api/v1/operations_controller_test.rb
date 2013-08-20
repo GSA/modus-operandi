@@ -7,7 +7,7 @@ class Api::V1::OperationsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, { 'id' => Operation.all.sample.id }
     assert_response :success
   end
 
@@ -16,8 +16,8 @@ class Api::V1::OperationsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get full_map" do
-    get :full_map
+  test "should get map" do
+    get :full_map, { 'id' => Operation.all.sample.id }
     assert_response :success
   end
 

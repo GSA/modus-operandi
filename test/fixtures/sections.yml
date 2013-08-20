@@ -2,14 +2,12 @@
 
 one:
   name: MyString
-  url: MyString
   dependencies: MyText
   description: MyText
   registration_id: 
 
 two:
   name: MyString
-  url: MyString
   dependencies: MyText
   description: MyText
   registration_id: 

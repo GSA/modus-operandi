@@ -16,4 +16,4 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-ModusOperandi::Application.config.secret_token = '9231a34de9b02c3f6b971f866b05d6d23d580ccf23b6373a9ee2b9f72e68bf2d92cc0ab03517ab5a78d164d3b17970c4176af066829dd88d178084b59bb9c2ce'
+ModusOperandi::Application.config.secret_key_base = '9231a34de9b02c3f6b971f866b05d6d23d580ccf23b6373a9ee2b9f72e68bf2d92cc0ab03517ab5a78d164d3b17970c4176af066829dd88d178084b59bb9c2ce'
