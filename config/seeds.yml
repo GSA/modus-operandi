@@ -11,6 +11,147 @@ Registrations:
           name: SAM User Account Registration
           url: "https://www.sam.gov/portal/public/SAM/"
         tag_list: external dependency
+      "CreateAnAccountChooseAnAccountType":
+        "descripton":
+            "There are two types of SAM accounts.  To register your business, you will need an Individual Account.  Choose 'Create an Account' to get started."
+      "PersonalInformation":
+        "descripton": "This page allows you to create the basic information needed to create your individual user account."
+      "formData":
+        "fields:
+            [
+                {
+                "matchString": "Title",
+                "required": "false",
+                "valid": "Any pull-down value",
+                "hover": "Your address title",
+                "focus": "Choose a value",
+                "unfocused": "Oops, your title is invalid",
+                "validator": {
+                    "type": "none",
+                    "rules": null
+                }
+                },
+                {
+                "matchString": "First Name",
+                "required": "true",
+                "hover": "Your legal first or given name",
+                "valid": "alphabetic characters only\n14 character maximum",
+                "focus": "Enter your name",
+                "unfocused": "don't you know your own name?",
+                "validator": {
+                    "type": "alpha-string",
+                    "rules": {
+                    "type": "alpha-string",
+                    "length": "14"
+                    }
+                }
+                },
+                {
+                "matchString": "Middle Initial",
+                "required": "false",
+                "valid": "one letter only, no punctuation",
+                "hover": "Your middle initial",
+                "focus": "enter your initial",
+                "unfocused": "one letter only please",
+                "validator": {
+                    "type": "none",
+                    "rules": null
+                }
+                },
+                {
+                "matchString": "Last Name",
+                "required": "true",
+                "hover": "Your legal last or family name",
+                "valid": "alphabetic characters only\n14 character maximum",
+                "focus": "please enter your family name",
+                "unfocused": "Oops, your name is invalid",
+                "validator": {
+                    "type": "alpha-string",
+                    "rules": {
+                    "type": "alpha-string",
+                    "length": "14"
+                    }
+                }
+                },
+                {
+                "matchString": "Suffix",
+                "required": "false",
+                "valid": "any characters",
+                "hover": "Suffix",
+                "focus": "Enter a suffix if desired",
+                "unfocused": "",
+                "validator": {
+                    "type": "none",
+                    "rules": null
+                }
+                },
+                {
+                "matchString": "Email Address",
+                "required": "true",
+                "valid": "must be a legal email address",
+                "hover": "Primary contact email address",
+                "focus": "please enter your email address",
+                "unfocused": "this is not a valid email",
+                "validator": {
+                    "type": "email"
+                }
+                },
+                {
+                "matchString": "Confirm Email Address",
+                "required": "true",
+                "valid": "must match email address",
+                "hover": "Confirm your contact email address",
+                "focus": "Please confirm your email address",
+                "unfocused": "this is not a match",
+                "validator": {
+                    "type": "confirm",
+                    "rules": {
+                        "type": "confirm",
+                    "matchField": "Email Address"
+                    }
+                }
+                },
+                {
+                "matchString": "Phone",
+                "required": "true",
+                "hover": "Your primary phone number",
+                "valid": "10 digit us phone number",
+                "focus": "Enter your phone number",
+                "unfocused": "Oops, your name is invalid",
+                "validator": {
+                    "type": "us-phone",
+                    "rules": {
+                    "type": "us-phone"
+                    }
+                }
+                },
+                {
+                "matchString": "Phone Extension",
+                "required": "false",
+                "hover": "extension",
+                "valid": "anything",
+                "focus": "Enter any necessary extension",
+                "unfocused": "",
+                "validator": {
+                    "type": "none",
+                    "rules": null
+                }
+                },
+                {
+                "matchString": "Fax",
+                "required": "false",
+                "hover": "Fax number",
+                "valid": "10 digit us phone number",
+                "focus": "Enter your fax number",
+                "unfocused": "",
+                "validator": {
+                    "type": "us-phone",
+                    "rules": {
+                    "type": "us-phone"
+                    }
+                }
+                }
+            ]
       "Purpose of Registration":
         children:
           "Determine Purpose":
